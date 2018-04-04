@@ -7,8 +7,7 @@ simulation and collect logs.  The main idea here is to let a TCP "Sender" read
 an external file with some information regarding the size of the next packet to
 be sent and the timeout to wait and then send it. In exchange, the TCP
 "Receiver" waits for the packet to arrive, saves the time of arrival and sends
-a `feedback` packet back to the Sender in order to certify the time of
-receival. In order to increase the amount of noise and simulate some network
+a `feedback` packet back to the Sender in order to certify the receiving time. In order to increase the amount of noise and simulate some network
 congestion, it is possible to use the `--interference` option and generate some
 UDP and TCP noise on the network. Everything is logged and can be easily
 plotted. Check the topology below to better understand 
@@ -47,7 +46,7 @@ this way further analysis can be carried out.
 ## Running
 A working installation of NS3 has to be deployed on the machine. 
 Check the [NS3](https://www.nsnam.org/ns-3-28/documentation/) Docs page for
-more infor regarding the initial setup. 
+more info regarding the initial setup. 
 Once the setup is ready:
 
 1. Export NS_LOG variable  
@@ -78,7 +77,7 @@ With waff launch as:
 `waff --run "WIFI_TCP_simulation --filein=s --tracing --interference"`
 
 ## VALGRIND
-For debugging purposes, I suggest using `valgring` with the following launch
+For debugging purposes, I suggest using `valgrind` with the following launch
 command:  
 `waff --run WIFI_TCP_simulation --command-template="valgrind --leak-check=full --track-origins=yes --show-leak-kinds=all %s --filein=schedulefile"`
 
