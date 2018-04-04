@@ -2,6 +2,7 @@
 
 This repo contains a single simulation environment developed using the NS3
 network simulation tool. 
+Check the topology to understand better the environment represented.
 
 ## Topology
 ```
@@ -23,6 +24,15 @@ network simulation tool.
 * AP: Access Point
 ============================================================
 ```
+In the case represented here, `n2` represents the Test Server and it is
+accessed by `n7`, the test client.
+However, in order to create some noise, a set of Server/Clients both in TCP and
+UDP are created and deployed over some nodes. By means of the tracking system
+of NS3, it is possible to log the interactions and also see an interactive
+visual representation of the situation. 
+The Test Clients, once the packet is received, sends a packet back to the
+server with the info about when the packet was received, in a DASH fashion. In
+this way further analysis can be carried out.
 
 ## Running
 A working installation of NS3 has to be deployed on the machine. 

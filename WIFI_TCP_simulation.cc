@@ -1,24 +1,41 @@
-/* WIFI_TCP_simulation.cc
-* RUN AS = ./waf --run "WIFI_TCP_simulation --filein=schedfile --tracing --interference"
-* --PrintHelp for knowing the arguments
+/* 
+ * WIFI TCP Simulation using NS3
+ *   Copyright (C) 2018 libremente 
 
-================== NETWORK SETUP ===========================
-*
-*  [10.1.5.0] (wifi)                    n2 -> TS
-*                                      /
-*  *    *    *    *                [10.1.2.0] (ptp)
-*  |    |    |    |   [10.1.1.0]     /
-* n5   n6   n7   n0 -------------- n1-[10.1.3.0]--n3 -> IUS
-* ITC  IUC  TC   AP      (ptp)       \
-*                                  [10.1.4.0] (ptp)
-*                                      \
-*                                       n4 -> ITS
-*
-* ITC/S: Interference TCP Client/Server - WifiSTA
-* IUC/S: Interference UDP Client/Server - WifiSTA
-* TC/S: Test Client/Server - WifiSTA
-* AP: Access Point
-============================================================
+ *   This program is free software: you can redistribute it and/or modify
+ *   it under the terms of the GNU General Public License as published by
+ *   the Free Software Foundation, either version 3 of the License, or
+ *   (at your option) any later version.
+
+ *   This program is distributed in the hope that it will be useful,
+ *   but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *   GNU General Public License for more details.
+
+ *   You should have received a copy of the GNU General Public License
+ *   along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ 
+ * Instructions
+ * RUN AS = ./waf --run "WIFI_TCP_simulation --filein=schedfile --tracing --interference"
+ * --PrintHelp for knowing the arguments
+ 
+ ================== NETWORK SETUP ===========================
+ *
+ *  [10.1.5.0] (wifi)                    n2 -> TS
+ *                                      /
+ *  *    *    *    *                [10.1.2.0] (ptp)
+ *  |    |    |    |   [10.1.1.0]     /
+ * n5   n6   n7   n0 -------------- n1-[10.1.3.0]--n3 -> IUS
+ * ITC  IUC  TC   AP      (ptp)       \
+ *                                  [10.1.4.0] (ptp)
+ *                                      \
+ *                                       n4 -> ITS
+ *
+ * ITC/S: Interference TCP Client/Server - WifiSTA
+ * IUC/S: Interference UDP Client/Server - WifiSTA
+ * TC/S: Test Client/Server - WifiSTA
+ * AP: Access Point
+ ============================================================
 */
 
 // General includes
