@@ -1,8 +1,18 @@
 # NS3 Simulation 
 
 This repo contains a single simulation environment developed using the NS3
-network simulation tool. 
-Check the topology to understand better the environment represented.
+network simulation tool.  This **single cpp file** contains all the functions
+needed to setup the topology, create all the components needed, run the
+simulation and collect logs.  The main idea here is to let a TCP "Sender" read
+an external file with some information regarding the size of the next packet to
+be sent and the timeout to wait and then send it. In exchange, the TCP
+"Receiver" waits for the packet to arrive, saves the time of arrival and sends
+a `feedback` packet back to the Sender in order to certify the time of
+receival. In order to increase the amount of noise and simulate some network
+congestion, it is possible to use the `--interference` option and generate some
+UDP and TCP noise on the network. Everything is logged and can be easily
+plotted. Check the topology below to better understand 
+what happens and where.
 
 ## Topology
 ```
@@ -30,8 +40,8 @@ However, in order to create some noise, a set of Server/Clients both in TCP and
 UDP are created and deployed over some nodes. By means of the tracking system
 of NS3, it is possible to log the interactions and also see an interactive
 visual representation of the situation. 
-The Test Clients, once the packet is received, sends a packet back to the
-server with the info about when the packet was received, in a DASH fashion. In
+The Receiver, once the packet is received, sends a packet back to the
+server with the info about when the packet was received. In
 this way further analysis can be carried out.
 
 ## Running
